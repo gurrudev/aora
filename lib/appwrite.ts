@@ -1,9 +1,22 @@
+import { Client } from 'react-native-appwrite';
+import { config } from 'dotenv';
+config();
+
 export const appwriteConfig = {
-    endpoint: 'https://cloud.appwrite.io/v1',
-    platform: 'com.gurrudev.aora',
-    projectId: '66e196b0003c958c5cbe',
-    databaseId: '66e199f90010ab4435e6',
-    userCollectionId: '66e19a9d00273d90ac86',
-    videoCollectionId: '66e1a296000b8fa1db6e',
-    storageId: '66e1a506002ffb8a1027'
-}
+    endpoint: process.env.APPWRITE_ENDPOINT,
+    platform: process.env.APPWRITE_PLATFORM,
+    projectId: process.env.APPWRITE_PROJECT_ID,
+    databaseId: process.env.APPWRITE_DATABASE_ID,
+    userCollectionId: process.env.APPWRITE_USER_COLLECTION_ID,
+    videoCollectionId: process.env.APPWRITE_VIDEO_COLLECTION_ID,
+    storageId: process.env.APPWRITE_STORAGE_ID
+};
+
+// Init your React Native SDK 
+const client = new Client();
+
+client
+    .setEndpoint(appwriteConfig.endpoint || '') // Your Appwrite Endpoint
+    .setProject(appwriteConfig.projectId || '') // Your project ID
+    .setPlatform(appwriteConfig.platform || '') // Your application ID or bundle ID.
+;
