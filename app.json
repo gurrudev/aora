@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "native-crash",
-    "slug": "native-crash",
+    "name": "Aora",
+    "slug": "Aora",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "com.gurrudev.aora"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gurrudev.aora"
     },
     "web": {
       "bundler": "metro",
