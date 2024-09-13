@@ -1,49 +1,57 @@
 import { View, Text, ScrollView, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from '../constants'
+import { images } from "../constants";
 import CustomButton from "@/components/customButton";
-import {Redirect, router, Router} from 'expo-router'
+import { Redirect, router, Router, Href } from "expo-router";
+import { useGlobalContext } from "@/context/GlobalProvider";
 
 export default function HomeScreen() {
+  const {isLoggedIn, isLoading} = useGlobalContext()
+  if(!isLoading && isLoggedIn) return <Redirect href='/home'/>
+  if(!isLoading && !isLoggedIn) return <Redirect href='/sign-in'/>
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="w-full justify-center items-center min-h-[90vh] px-4">
-          <Image source={images.logo}
+          <Image
+            source={images.logo}
             className="w-[130px] h-[88px]"
             resizeMode="contain"
           />
-
-          <Image source={images.cards}
+          <Image
+            source={images.cards}
             className="max-w-[380px] w-full h-[300px]"
             resizeMode="contain"
           />
-
           <View className="relative mt-5">
             <Text className="text-3xl text-white font-bold text-center">
               Discover Endless Possibilities with
               <Text className="text-secondary">
-                {' Aora !'}
+                {" Aora !"}
               </Text>
             </Text>
-            <Image source={images.path}
+            <Image
+              source={images.path}
               className="w-[136px] h-[15px] absolute -bottom-3 -right-8"
               resizeMode="contain"
             />
           </View>
-          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">Where creativity meets innovation: embark on a journey of limitless exploration with Aora.</Text>
+          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
+            Where creativity meets innovation: embark on a journey of limitless
+            exploration with Aora.
+          </Text>
           <CustomButton
             title="Continue with Email"
-            handlePress={() => router.push('/sign-in')}
+            handlePress={() => router.push("/sign-in")}
             containerStyle="w-full mt-7"
             textStyles=""
             isLoading={false}
           />
         </View>
       </ScrollView>
-
-      <StatusBar backgroundColor="#161622"
+      <StatusBar
+        backgroundColor="#161622"
         style="light"
       />
     </SafeAreaView>
