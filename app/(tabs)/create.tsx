@@ -35,11 +35,7 @@ const Create = () => {
             if (selectType === 'video') {
                 setForm({ ...form, video: result.assets[0] })
             }
-        } else {
-            setTimeout(() => {
-                Alert.alert('Document Picked', JSON.stringify(result, null, 2))
-            }, 100)
-        }
+        } 
     }
     const submit = async () => {
         if (!form.prompt || !form.title || !form.thumbnail || !form.video) {
@@ -84,7 +80,7 @@ const Create = () => {
                             />
                         ) : (
                             <View className='w-full h-40 px-4 bg-black-100 rounded-2xl justify-center items-center'>
-                                <View className='w-14 h-14 border border-dashed border-secondary justify-center items-center'>
+                                <View className='w-full h-[80%] border border-dashed border-secondary justify-center items-center'>
                                     <Image source={icons.upload}
                                         resizeMode='contain'
                                         className='w-1/2 h-1/2'
@@ -122,7 +118,7 @@ const Create = () => {
                     keyboardType=''
                 />
                 <CustomButton
-                    title='Submit & Publish'
+                    title='Publish'
                     handlePress={submit}
                     containerStyle='mt-7 '
                     isLoading={uploading}
@@ -131,7 +127,5 @@ const Create = () => {
         </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({})
 
 export default Create;
