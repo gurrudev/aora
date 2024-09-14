@@ -6,7 +6,7 @@ import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 
 const zoomIn = {
     0: {
-        scale: 0.9
+        scale: 0.8
     },
     1: {
         scale: 1
@@ -18,7 +18,7 @@ const zoomOut = {
         scale: 1
     },
     1: {
-        scale: 0.9
+        scale: 0.8
     }
 };
 

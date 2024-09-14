@@ -99,3 +99,16 @@ export const getLatestPosts = async () => {
         throw new Error(String(error))
     }
 }
+
+export const searchPosts = async (query: string) => {
+    try {
+        const posts = await databases.listDocuments(
+            env.APPWRITE_DATABASE_ID,
+            env.APPWRITE_VIDEO_COLLECTION_ID,
+            [Query.search('title', query)]
+        );
+        return posts.documents;
+    } catch (error) {
+        throw new Error(String(error));
+    }
+};

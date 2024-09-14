@@ -56,13 +56,7 @@ const Home = () => {
                                 />
                             </View>
                         </View>
-                        <SearchInput 
-                            value=''
-                            otherStyles=""
-                            placeholder="Search for a video" 
-                            keyboardType=""
-                            handleChangeText={()=>{}}
-                        />
+                        <SearchInput initialQuery={""}/>
                         <View className="w-full flex-1 pt-5 pb-8">
                             <Text className="text-gray-100 text-lg font-pregular mb-3">
                                 Latest Videos
