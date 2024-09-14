@@ -5,13 +5,13 @@ import * as Animatable from 'react-native-animatable';
 import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 
 const zoomIn = {
-    from: { scale: 0.8 },
+    from: { scale: 0.9 },
     to: { scale: 1 }
 };
 
 const zoomOut = {
     from: { scale: 1 },
-    to: { scale: 0.8 }
+    to: { scale: 0.9 }
 };
 
 const TrendingList = ({ activeItem, item }: { activeItem: { $id: string }, item: { $id: string, thumbnail: string, video: string } }) => {
