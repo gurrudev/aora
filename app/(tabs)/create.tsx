@@ -3,7 +3,7 @@ import FormField from '@/components/FormField';
 import { icons } from '@/constants';
 import { ResizeMode, Video } from 'expo-av';
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image, Alert } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router';

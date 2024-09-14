@@ -5,7 +5,7 @@ import VideoCard from "@/components/VideoCard";
 import { images } from "@/constants";
 import { useGlobalContext } from "@/context/GlobalProvider";
 import { getAllPosts, getLatestPosts } from "@/lib/appwrite";
-import { useAppwrite } from "@/lib/useAppwrite";
+import { useAppwrite } from "@/hooks/useAppwrite";
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {

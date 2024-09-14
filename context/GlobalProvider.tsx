@@ -1,7 +1,6 @@
 import { getCurrentUser } from "@/lib/appwrite";
 import { createContext, useContext, useState, useEffect } from "react";
 import { ReactNode } from "react";
-import { DocContextType } from "./@types.context";
 
 const GlobalContext = createContext({
     isLoggedIn: false,

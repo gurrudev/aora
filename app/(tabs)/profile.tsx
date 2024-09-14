@@ -4,15 +4,13 @@ import SearchInput from '@/components/SearchInput';
 import VideoCard from '@/components/VideoCard';
 import { icons } from '@/constants';
 import { useGlobalContext } from '@/context/GlobalProvider';
-import { getUserPosts, searchPosts, signOut } from '@/lib/appwrite';
-import { useAppwrite } from '@/lib/useAppwrite';
-import { router, useLocalSearchParams } from 'expo-router';
+import { getUserPosts, signOut } from '@/lib/appwrite';
+import { useAppwrite } from "@/hooks/useAppwrite";
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
 import {
     FlatList,
     Image,
-    Text,
     TouchableOpacity,
     View,
 } from 'react-native';

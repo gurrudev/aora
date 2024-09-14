@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, ScrollView, StyleSheet, View, Text, Alert } from 'react-native';
+import { Image, ScrollView, View, Text, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../../constants'
 import FormField from '@/components/FormField';
@@ -10,18 +10,17 @@ import { useGlobalContext } from '@/context/GlobalProvider';
 
 const SignIn = () => {
     const {setUser, setIsLoggedIn} = useGlobalContext()
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const [form, setForm] = useState({
         email: '',
         password: ''
     })
-    const [isSubmitting, setIsSubmitting] = useState(false)
     
     const submit = async() => {
         if (!form.email || !form.password) {
             Alert.alert('Error', 'Please fill in all the fields')
         }
         setIsSubmitting(true)
-
         try {
             await signIn(form.email, form.password)
             const result = await getCurrentUser()

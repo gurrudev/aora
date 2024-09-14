@@ -2,7 +2,7 @@ import EmptyState from '@/components/EmptyState';
 import SearchInput from '@/components/SearchInput';
 import VideoCard from '@/components/VideoCard';
 import { searchPosts } from '@/lib/appwrite';
-import { useAppwrite } from '@/lib/useAppwrite';
+import { useAppwrite } from "@/hooks/useAppwrite";
 import { useLocalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect} from 'react';

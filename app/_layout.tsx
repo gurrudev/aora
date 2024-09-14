@@ -1,5 +1,4 @@
-import { Slot, SplashScreen, Stack } from 'expo-router'
-import { Text, StyleSheet } from 'react-native'
+import { SplashScreen, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
 import { useEffect } from 'react'
 import GlobalProvider from '@/context/GlobalProvider'
@@ -28,7 +27,7 @@ const RootLayout = () => {
 
   return (
     <GlobalProvider>
-      <Stack screenOptions={{headerShown: false}}>
+      <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name='index'
           options={{ headerShown: false }}
         />

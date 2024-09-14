@@ -1,7 +1,7 @@
 import { icons } from '@/constants';
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 
 const TabIcon = ({icon, color, name, focused}: {icon: any, color: string, name: string, focused: boolean}) =>{
     return (
@@ -11,7 +11,6 @@ const TabIcon = ({icon, color, name, focused}: {icon: any, color: string, name: 
                 tintColor={color}
                 className='w-6 h-6'
             />
-
             <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs text-center`} style={{color: color}}>
                 {name}
             </Text>

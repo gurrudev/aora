@@ -1,6 +1,6 @@
 import EmptyState from '@/components/EmptyState';
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const Bookmark = () => {
     return (
