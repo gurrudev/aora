@@ -13,7 +13,7 @@ const VideoCard = ({ video }: { video: { title: string, thumbnail: string, video
                 <View className='justify-center items-center flex-row flex-1'>
                     <View className='w-[45px] h-[45px] justify-center items-center border border-secondary rounded-lg p-0.5'>
                         <Image source={{ uri: creator?.avatar }}
-                            className='w-full h-full rounded-lg'
+                            className='w-full h-full rounded-[5px]'
                             resizeMode='cover'
                         />
                     </View>
