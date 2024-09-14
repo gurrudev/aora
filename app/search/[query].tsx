@@ -1,19 +1,13 @@
 import EmptyState from '@/components/EmptyState';
 import SearchInput from '@/components/SearchInput';
-import Trending from '@/components/Trending';
 import VideoCard from '@/components/VideoCard';
-import { images } from '@/constants';
-import { getAllPosts, getLatestPosts, searchPosts } from '@/lib/appwrite';
+import { searchPosts } from '@/lib/appwrite';
 import { useAppwrite } from '@/lib/useAppwrite';
 import { useLocalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import {
-  Alert,
   FlatList,
-  Image,
-  RefreshControl,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
@@ -22,7 +16,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const Search = () => {
   const { query } = useLocalSearchParams() as { query: string };
   const { data: posts, refetch } = useAppwrite(() => searchPosts(query));
-  console.log(query, posts),
+
     useEffect(() => {
       refetch();
     }, [query]);

@@ -5,21 +5,13 @@ import * as Animatable from 'react-native-animatable';
 import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 
 const zoomIn = {
-    0: {
-        scale: 0.8
-    },
-    1: {
-        scale: 1
-    }
+    from: { scale: 0.9 },
+    to: { scale: 1 }
 };
 
 const zoomOut = {
-    0: {
-        scale: 1
-    },
-    1: {
-        scale: 0.8
-    }
+    from: { scale: 1 },
+    to: { scale: 0.9 }
 };
 
 const TrendingList = ({ activeItem, item }: { activeItem: { $id: string }, item: { $id: string, thumbnail: string, video: string } }) => {
@@ -29,7 +21,7 @@ const TrendingList = ({ activeItem, item }: { activeItem: { $id: string }, item:
         <Animatable.View
             className='mr-5'
             // Trigger animation based on the active item's id comparison
-            animation={activeItem?.$id === item.$id ? zoomIn : zoomOut}
+            animation={activeItem.$id === item.$id ? zoomIn : zoomOut}
             duration={500}
         >
             {play ? (
